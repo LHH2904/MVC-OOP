@@ -1,5 +1,7 @@
 <?php
-require_once './app/models/BaseModel.php';
+
+namespace App\Models;
+
 class Category extends BaseModel
 {
     var $table = "categories";

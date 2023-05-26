@@ -1,6 +1,11 @@
 <?php
-class ProductController{
-    public function addForm(){
+
+namespace App\Controllers;
+
+class ProductController
+{
+    public function addForm()
+    {
         return 'Giao diện tạo mới sản phẩm';
     }
 }

@@ -1,4 +1,9 @@
 <?php
+
+namespace App\Models;
+
+use PDO;
+
 class BaseModel
 {
     function __construct()
