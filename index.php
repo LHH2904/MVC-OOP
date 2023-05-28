@@ -3,15 +3,17 @@ session_start();
 // Tôi muốn : 'tất cả request tới thư mục mvc phải bắt buộc đi qua file index.php'
 $url = isset($_GET['url']) ? $_GET['url'] : "/";
 // echo $url;
-require_once './app/controllers/HomeController.php';
-require_once './app/controllers/ProductController.php';
+// require_once './app/controllers/HomeController.php';
+// require_once './app/controllers/ProductController.php';
 
-require_once './app/models/BaseModel.php';
-require_once './app/models/Product.php';
-require_once './app/models/Category.php';
+// require_once './app/models/BaseModel.php';
+// require_once './app/models/Product.php';
+// require_once './app/models/Category.php';
+require_once './vendor/autoload.php';
 
 use App\Controllers\HomeController;
 use App\Controllers\ProductController;
+use App\Controllers\CategoryController;
 
 switch ($url) {
     case '/':
@@ -29,6 +31,10 @@ switch ($url) {
     case 'add-product':
         $ctr = new ProductController();
         echo $ctr->addForm();
+        break;
+    case 'list-cate':
+        $ctr = new CategoryController();
+        echo $ctr->index();
         break;
 
     default:
