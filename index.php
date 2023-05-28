@@ -10,6 +10,7 @@ $url = isset($_GET['url']) ? $_GET['url'] : "/";
 // require_once './app/models/Product.php';
 // require_once './app/models/Category.php';
 require_once './vendor/autoload.php';
+require_once './commons/database-config.php';
 
 use App\Controllers\HomeController;
 use App\Controllers\ProductController;
@@ -23,6 +24,18 @@ switch ($url) {
     case 'detail':
         $ctr = new HomeController();
         echo $ctr->detail();
+        break;
+    case 'insert-cate':
+        $ctr = new CategoryController();
+        echo $ctr->addData();
+        break;
+    case 'update-cate':
+        $ctr = new CategoryController();
+        echo $ctr->editData();
+        break;
+    case 'delete-cate':
+        $ctr = new CategoryController();
+        echo $ctr->deleteData();
         break;
     case 'contact':
         $ctr = new HomeController();

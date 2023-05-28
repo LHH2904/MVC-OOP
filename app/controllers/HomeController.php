@@ -9,7 +9,16 @@ class HomeController
     public function index()
     {
         // return 'Trang chủ Website';
-        $products = Product::all();
+        // $products = Product::all();
+        $product = Product::where('price', '<', 5000)
+            ->orderBy('price', 'DESC')
+            ->first();
+        // where id được thay thế bằng hàm find(8);
+        // nó tương đương với $product = Product::where('id',9)->first();
+        // $product = Product::find(8);
+        echo '<pre>';
+        var_dump($product);
+        die();
         include_once './app/views/homepage.php';
     }
 

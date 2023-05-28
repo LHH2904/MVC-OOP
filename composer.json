@@ -11,5 +11,7 @@
       "email": "102815563+LHH2904@users.noreply.github.com"
     }
   ],
-  "require": {}
+  "require": {
+    "illuminate/database": "^10.12"
+  }
 }
